@@ -26,10 +26,12 @@ def read_sensors():
     print("Both sensors read at once:    %.2f  %.2f" % hdc.temp_humi())
     print("Battery low: %s" % (hdc.battery_low()))
 
+def main():
 print("Reading sensors 10 times using idle sleeping...")
 for i in range(10):
     read_sensors()
     utime.sleep_ms(100)
+main()
 
 #print("Reading sensors 10 times using power-saving pyb.stop() and rtc.wakeup() ...")
 #rtc = pyb.RTC()
